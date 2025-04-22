@@ -1,0 +1,17 @@
+.large-button {
+  width: 452px;
+  height: 42px;
+  background-color: #a8c3a0;
+  color: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #a8c3a0;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.large-button:hover {
+  background-color: #9bb993;
+  border-color: #9bb993;
+}
