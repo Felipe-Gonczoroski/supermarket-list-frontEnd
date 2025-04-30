@@ -1,13 +1,23 @@
 import { useState } from "react";
+import { updateItem } from "../../services/request";
 import "./index.css";
 
 export const ListCard = ({ item, onClick }) => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(item?.checked);
+
+  const handleChange = async () => {
+    const newChecked = !checked;
+    setChecked(newChecked);
+
+    const updatedItem = { ...item, checked: newChecked };
+    await updateItem(item?._id, updatedItem);
+  };
+
   return (
     <div className={`list-card-container ${checked ? "checked" : ""}`}>
       <div className="checkbox">
         <input
-          onChange={() => setChecked(!checked)}
+          onChange={handleChange}
           checked={checked}
           id={`checkbox-${item._id}`}
           type="checkbox"
