@@ -44,7 +44,7 @@ export const HomeScreen = () => {
             placeholder={"Ex: usuario1"}
           />
         </div>
-        <Button onClick={onClickContinue}>Continuar</Button>
+        <Button onClick={onClickContinue}>Acessar</Button>
       </div>
     </div>
   );
