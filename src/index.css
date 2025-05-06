@@ -81,3 +81,17 @@ span {
   visibility: hidden;
   width: 0px;
 }
+
+@media screen and (max-width: 430px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}

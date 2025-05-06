@@ -23,28 +23,13 @@
   box-sizing: border-box;
 }
 
-.modal-content.edit-mode .buttons-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 22px;
-  margin-top: 556px;
-}
-
-.modal-content.add-mode .buttons-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 26px;
-  margin-top: 632px;
-}
-
 .modal-header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
+  top: 1%;
   width: 96%;
   padding: 16px;
   box-sizing: border-box;
@@ -52,6 +37,10 @@
 }
 
 .modal-close-button {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
   width: 24px;
   height: 24px;
   background-color: transparent;
@@ -66,4 +55,77 @@
 .modal .input-container {
   width: 428px;
   margin-bottom: 6px;
+}
+
+.modal-content.edit-mode .buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-top: 556px;
+}
+
+.modal-content.add-mode .buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 26px;
+  margin-top: 636px;
+}
+
+@media screen and (max-width: 830px) {
+  .modal-content {
+    width: 65vw;
+  }
+
+  .modal-header {
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .modal .input-container {
+    width: 428px;
+    margin-top: 32px;
+    margin-bottom: 2px;
+  }
+
+  .modal-content.edit-mode .buttons-container {
+    gap: 24px;
+    margin-top: 58vh;
+  }
+
+  .modal-content.add-mode .buttons-container {
+    margin-top: 64vh;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .modal-content {
+    width: 100vw;
+    height: 100vh;
+    padding-bottom: 18px;
+  }
+
+  .modal-header {
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .modal .input-container {
+    width: 428px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  .modal-content.edit-mode .buttons-container {
+    gap: 22px;
+    margin-top: 42vh;
+  }
+
+  .modal-content.add-mode .buttons-container {
+    margin-top: 53vh;
+  }
 }

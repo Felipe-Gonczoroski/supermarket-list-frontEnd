@@ -88,3 +88,42 @@
   object-fit: contain;
   margin-right: 6px;
 }
+
+@media screen and (max-width: 830px) {
+  .larger-button {
+    max-width: 432px;
+  }
+
+  .light-larger-button {
+    max-width: 432px;
+  }
+
+  .large-button {
+    max-width: 426px;
+  }
+
+  .small-button {
+    width: 128px;
+    height: 42px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .larger-button {
+    max-width: 278px;
+  }
+
+  .light-larger-button {
+    max-width: 278px;
+  }
+
+  .large-button {
+    max-width: 278px;
+  }
+
+  .small-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+  }
+}

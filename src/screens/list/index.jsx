@@ -50,7 +50,7 @@ export const ListScreen = () => {
           </div>
           <div>
             <Button variant="small" onClick={onClickAddButton}>
-              Adicionar
+              {window.innerWidth <= 420 ? "+" : "Adicionar"}
             </Button>
           </div>
         </div>
