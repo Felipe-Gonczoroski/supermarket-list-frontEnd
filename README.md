@@ -14,6 +14,10 @@ This is an application built with React.js, focused on making it easier to creat
 - Axios
 - Vite
 
+## Requiriments
+
+- Node.js (https://nodejs.org/en/)
+
 ## Instructions to run locally
 
 1. Clone the project
