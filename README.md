@@ -6,6 +6,10 @@ This is an application built with React.js, focused on making it easier to creat
 <img height="500" src="https://github.com/Felipe-Gonczoroski/supermarket-list-frontEnd/blob/master/public/images/Demo.gif" alt="Supermarket List Demo"/>
 </p>
 
+## Link to Production App:
+
+https://supermarket-list-front-end.vercel.app
+
 ## Technologies used
 
 - React.js
