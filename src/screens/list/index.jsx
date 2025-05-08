@@ -1,7 +1,7 @@
-import { getList } from "../../services/request";
-import { useState, useEffect } from "react";
-import "./index.css";
-import { ListRender, Loader, Button, Modal } from "../../components";
+import { getList } from 'services/request';
+import { useState, useEffect } from 'react';
+import './index.css';
+import { ListRender, Loader, Button, Modal } from 'components';
 
 export const ListScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -50,7 +50,7 @@ export const ListScreen = () => {
           </div>
           <div>
             <Button variant="small" onClick={onClickAddButton}>
-              {window.innerWidth <= 420 ? "+" : "Adicionar"}
+              {window.innerWidth <= 420 ? '+' : 'Adicionar'}
             </Button>
           </div>
         </div>

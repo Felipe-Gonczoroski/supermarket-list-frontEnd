@@ -1,28 +1,28 @@
 @font-face {
-  font-family: "Avenir Next";
+  font-family: 'Avenir Next';
   src: url(/fonts/AvenirNext-Regular.otf);
 }
 
 @font-face {
-  font-family: "Avenir Next";
+  font-family: 'Avenir Next';
   src: url(/fonts/AvenirNext-Bold.otf);
   font-weight: bold;
 }
 
 @font-face {
-  font-family: "Avenir Next";
+  font-family: 'Avenir Next';
   src: url(/fonts/AvenirNext-It.otf);
   font-style: italic;
 }
 
 @font-face {
-  font-family: "Avenir Next";
+  font-family: 'Avenir Next';
   src: url(/fonts/AvenirNext-Medium.ttf);
   font-weight: 500;
 }
 
 body {
-  font-family: "Avenir Next";
+  font-family: 'Avenir Next';
   margin: 0;
 }
 

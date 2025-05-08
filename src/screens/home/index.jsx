@@ -1,21 +1,21 @@
-import { useState } from "react";
-import { useNavigate } from "react-router";
-import "./index.css";
-import { Button, Input } from "../../components";
-import { SAVE_USERNAME_PATH } from "../../services/constants";
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import './index.css';
+import { Button, Input } from 'components';
+import { SAVE_USERNAME_PATH } from 'services/constants';
 
 export const HomeScreen = () => {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState('');
 
   const navigate = useNavigate();
 
   const onClickContinue = () => {
     if (username.length < 3) {
-      alert("O nome de usuário deve conter no mínimo 3 caracteres.");
+      alert('O nome de usuário deve conter no mínimo 3 caracteres.');
       return;
     }
     localStorage.setItem(SAVE_USERNAME_PATH, username);
-    navigate("/list");
+    navigate('/list');
   };
 
   return (
@@ -40,8 +40,8 @@ export const HomeScreen = () => {
           <Input
             onChange={(text) => setUsername(text)}
             value={username}
-            label={"Username"}
-            placeholder={"Ex: usuario1"}
+            label={'Username'}
+            placeholder={'Ex: usuario1'}
           />
         </div>
         <Button onClick={onClickContinue}>Acessar</Button>

@@ -1,6 +1,6 @@
-import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import { HomeScreen, ListScreen } from "./screens/";
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { HomeScreen, ListScreen } from './screens/';
 
 function App() {
   return (

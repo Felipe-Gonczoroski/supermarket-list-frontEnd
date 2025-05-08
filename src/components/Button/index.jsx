@@ -1,6 +1,6 @@
-import "./index.css";
+import './index.css';
 
-export const Button = ({ children, onClick, variant = "large", icon }) => {
+export const Button = ({ children, onClick, variant = 'large', icon }) => {
   return (
     <button onClick={onClick} className={`${variant}-button`}>
       {children}

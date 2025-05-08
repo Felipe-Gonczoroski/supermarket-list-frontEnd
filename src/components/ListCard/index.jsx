@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { updateItem } from "../../services/request";
-import "./index.css";
+import { useState } from 'react';
+import { updateItem } from '../../services/request';
+import './index.css';
 
 export const ListCard = ({ item, onClick }) => {
   const [checked, setChecked] = useState(item?.checked);
@@ -14,7 +14,7 @@ export const ListCard = ({ item, onClick }) => {
   };
 
   return (
-    <div className={`list-card-container ${checked ? "checked" : ""}`}>
+    <div className={`list-card-container ${checked ? 'checked' : ''}`}>
       <div className="checkbox">
         <input
           onChange={handleChange}
@@ -25,8 +25,8 @@ export const ListCard = ({ item, onClick }) => {
 
         <label htmlFor={`checkbox-${item._id}`} />
       </div>
-      <div className={"list-card-text-container"}>
-        <span className={`list-card-title ${checked ? "checked-title" : ""}`}>
+      <div className={'list-card-text-container'}>
+        <span className={`list-card-title ${checked ? 'checked-title' : ''}`}>
           {item.name}
         </span>
         <span className="list-card-sutitle">{item.quantity} unidades</span>

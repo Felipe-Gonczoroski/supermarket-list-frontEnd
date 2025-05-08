@@ -1,5 +1,5 @@
-import { ListCard } from "../ListCard";
-import "./index.css";
+import { ListCard } from '../ListCard';
+import './index.css';
 
 export const ListRender = ({ list, onEdit }) => {
   if (!Array.isArray(list) || list?.length === 0) {
