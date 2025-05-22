@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import './index.css';
-import { Button, Input } from 'components';
+import { Button, Input, Title, Subtitle } from 'components';
 import { SAVE_USERNAME_PATH } from 'services/constants';
+import { ScreenContainer, ContentContainer, BagImage } from './styles';
 
 export const HomeScreen = () => {
   const [username, setUsername] = useState('');
@@ -19,33 +19,36 @@ export const HomeScreen = () => {
   };
 
   return (
-    <div className="home-screen-container">
-      <div className="home-screen-content-container">
-        <img
-          className="shopping-bag-image"
-          src="/images/shopping-bag.svg"
-          alt="Sacola de compras"
-        />
-        <h2 className="home-screen-title">
+    <ScreenContainer>
+      <ContentContainer>
+        <BagImage />
+        <Title $margin={'16px 0 10px 0'} $lineHeight={26}>
           Sua lista de supermercado mais fácil do que nunca
-        </h2>
-        <p className="home-screen-subtitle">
+        </Title>
+        <Subtitle $align={'center'}>
           Ajudamos você a organizar sua <br />
           lista de compras de forma descomplicada.
-        </p>
-        <p className="home-screen-form-instruction">
+        </Subtitle>
+        <Subtitle
+          $mw={450}
+          $mt={36}
+          $align={'left'}
+          $mwMobile={272}
+          $mbMobile={4}
+        >
           Digite abaixo seu usuário para ter acesso a sua lista de compras:
-        </p>
-        <div>
-          <Input
-            onChange={(text) => setUsername(text)}
-            value={username}
-            label={'Username'}
-            placeholder={'Ex: usuario1'}
-          />
-        </div>
-        <Button onClick={onClickContinue}>Acessar</Button>
-      </div>
-    </div>
+        </Subtitle>
+        <Input
+          onChange={(text) => setUsername(text)}
+          value={username}
+          label={'Username'}
+          placeholder={'Ex: usuario1'}
+          $margin="14px 0 22px 0"
+        />
+        <Button onClick={onClickContinue} variant="large">
+          Acessar
+        </Button>
+      </ContentContainer>
+    </ScreenContainer>
   );
 };

@@ -1,7 +1,16 @@
 import { getList } from 'services/request';
 import { useState, useEffect } from 'react';
-import './index.css';
-import { ListRender, Loader, Button, Modal } from 'components';
+import { ListRender, Modal } from 'components/organism';
+import { Title, Button, Loader } from 'components/atoms';
+import {
+  ScreenContainer,
+  ContentContainer,
+  ScreenHeader,
+  HeaderTitleContainer,
+  LogoImage,
+  ListContainer,
+  LoaderContainer,
+} from './styles';
 
 export const ListScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -37,34 +46,30 @@ export const ListScreen = () => {
   };
 
   return (
-    <div className="list-screen-container">
-      <div className="list-screen-content-container">
-        <div className="list-screen-header">
-          <div className="list-screen-header-title">
-            <img
-              className="logo-image"
-              src="/images/logo.png"
-              alt="Ícone de cesta de compras"
-            />
-            <h1>Lista Supermercado</h1>
-          </div>
-          <div>
-            <Button variant="small" onClick={onClickAddButton}>
-              {window.innerWidth <= 420 ? '+' : 'Adicionar'}
-            </Button>
-          </div>
-        </div>
-        <div className="list-screen-list-container">
+    <ScreenContainer>
+      <ContentContainer>
+        <ScreenHeader>
+          <HeaderTitleContainer>
+            <LogoImage src="/images/logo.png" alt="Ícone de cesta de compras" />
+            <Title $fontSize={32} $fontSizeMobile={22}>
+              Lista Supermercado
+            </Title>
+          </HeaderTitleContainer>
+          <Button variant="small" onClick={onClickAddButton}>
+            {window.innerWidth <= 420 ? '+' : 'Adicionar'}
+          </Button>
+        </ScreenHeader>
+        <ListContainer>
           {loading ? (
-            <div className="loader-container">
+            <LoaderContainer>
               <Loader />
-            </div>
+            </LoaderContainer>
           ) : (
             <ListRender onEdit={onEditItem} list={listData} />
           )}
-        </div>
-      </div>
+        </ListContainer>
+      </ContentContainer>
       {modalVisible && <Modal item={selectItem} onClose={onCloseModal} />}
-    </div>
+    </ScreenContainer>
   );
 };

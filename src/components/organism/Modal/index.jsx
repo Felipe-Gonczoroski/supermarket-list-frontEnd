@@ -1,8 +1,14 @@
-import './index.css';
 import { useEffect, useState } from 'react';
-import { Input } from '../Input';
-import { Button } from '../Button';
-import { createItem, updateItem, deleteItem } from '../../services/request';
+import { Input } from '../../molecules';
+import { Title, Button } from '../../atoms';
+import { createItem, updateItem, deleteItem } from '../../../services/request';
+import {
+  ModalBackgroundContainer,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ButtonsContainer,
+} from './styles';
 
 export const Modal = ({ onClose, item }) => {
   const [name, setName] = useState('');
@@ -63,18 +69,23 @@ export const Modal = ({ onClose, item }) => {
     }
   }, [item]);
 
+  const mode = item ? 'edit' : 'add';
+
   return (
-    <div className="modal">
-      <div className={`modal-content ${item ? 'edit-mode' : 'add-mode'}`}>
-        <div className="modal-header">
-          <h3>{item ? 'Editar item' : 'Adicionar novo item'}</h3>
-          <button className="modal-close-button" onClick={onClose} />
-        </div>
+    <ModalBackgroundContainer>
+      <ModalContent>
+        <ModalHeader>
+          <Title as="h2" $fontWeight={500}>
+            {item ? 'Editar item' : 'Adicionar novo item'}
+          </Title>
+          <ModalCloseButton onClick={onClose} />
+        </ModalHeader>
         <Input
           onChange={(text) => setName(text)}
           value={name}
           label={'Nome'}
           placeholder={'Ex: Arroz'}
+          $margin={'32px 0 24px 0'}
         />
         <Input
           onChange={(text) => setQuantity(text)}
@@ -82,7 +93,7 @@ export const Modal = ({ onClose, item }) => {
           label={'Quantidade'}
           type="number"
         />
-        <div className="buttons-container">
+        <ButtonsContainer mode={mode}>
           <Button
             onClick={item ? callUpdateItem : callAddItem}
             variant="larger"
@@ -90,16 +101,12 @@ export const Modal = ({ onClose, item }) => {
             {item ? 'Atualizar' : 'Adicionar'}
           </Button>
           {item && (
-            <Button
-              onClick={callDeleteItem}
-              variant="light-larger"
-              icon="trash"
-            >
+            <Button onClick={callDeleteItem} variant="lightLarger" icon="trash">
               Deletar item
             </Button>
           )}
-        </div>
-      </div>
-    </div>
+        </ButtonsContainer>
+      </ModalContent>
+    </ModalBackgroundContainer>
   );
 };
