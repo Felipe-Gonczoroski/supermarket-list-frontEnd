@@ -39,15 +39,12 @@ https://github.com/Felipe-Gonczoroski/supermarket-list-frontEnd.git
 
 ```
 cd supermarket-list && yarn
+```
 
 3. Run the project
 
 ```
-
 yarn dev
-
-```
-
 ```
 
 ## Supermarket List App
@@ -81,7 +78,7 @@ https://supermarket-list-front-end.vercel.app
 
 ## Instruções para rodar localmente
 
-1. Clone o repositório:
+1. Clone o projeto:
 
 ```
 https://github.com/Felipe-Gonczoroski/supermarket-list-frontEnd.git
@@ -91,13 +88,10 @@ https://github.com/Felipe-Gonczoroski/supermarket-list-frontEnd.git
 
 ```
 cd supermarket-list && yarn
+```
 
 3. Rode o projeto:
 
 ```
-
 yarn dev
-
-```
-
 ```
