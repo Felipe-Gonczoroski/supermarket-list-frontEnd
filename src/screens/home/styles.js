@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from 'styles/breakpoints';
 
 export const ScreenContainer = styled.div`
   display: flex;
@@ -17,9 +18,26 @@ export const ContentContainer = styled.div`
   width: 552px;
   height: 720px;
   border-radius: 24px;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.white};
 
-  @media (max-width: 430px) {
+  @media (max-width: ${breakpoints.xxl}) {
+    width: 528px;
+    height: 582px;
+  }
+
+  @media (max-width: ${breakpoints.xl}) {
+    width: 492px;
+    height: 600px;
+    padding: 12px;
+  }
+
+  @media (max-width: ${breakpoints.lg}) {
+    width: 480px;
+    height: 526px;
+    padding: 18px;
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
     max-width: 300px;
     max-height: 600px;
     padding: 12px;
@@ -31,10 +49,25 @@ export const BagImage = styled.img.attrs({
   alt: 'Sacola de compras',
 })`
   width: 220px;
-  height: 220px;
+  height: auto;
 
-  @media (max-width: 430px) {
+  @media (max-width: ${breakpoints.xxl}) {
+    width: 200px;
+    height: auto;
+  }
+
+  @media (max-width: ${breakpoints.xl}) {
     width: 170px;
-    height: 170px;
+    height: auto;
+  }
+
+  @media (max-width: ${breakpoints.lg}) {
+    width: 180px;
+    height: auto;
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
+    width: 170px;
+    height: auto;
   }
 `;

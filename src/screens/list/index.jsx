@@ -51,12 +51,19 @@ export const ListScreen = () => {
         <ScreenHeader>
           <HeaderTitleContainer>
             <LogoImage src="/images/logo.png" alt="Ícone de cesta de compras" />
-            <Title $fontSize={32} $fontSizeMobile={22}>
+            <Title
+              $fontSize={32}
+              $fontSizeXXL={28}
+              $fontSizeXL={28}
+              $fontSizeSM={22}
+              $lineHeightLG={26}
+              $mwLG={310}
+            >
               Lista Supermercado
             </Title>
           </HeaderTitleContainer>
           <Button variant="small" onClick={onClickAddButton}>
-            {window.innerWidth <= 420 ? '+' : 'Adicionar'}
+            {window.innerWidth <= 480 ? '+' : 'Adicionar'}
           </Button>
         </ScreenHeader>
         <ListContainer>

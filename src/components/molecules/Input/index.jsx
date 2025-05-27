@@ -6,10 +6,11 @@ export const Input = ({
   value,
   onChange,
   type,
+  $variant = 'base',
   $margin,
 }) => {
   return (
-    <InputContainer $margin={$margin}>
+    <InputContainer $variant={$variant} $margin={$margin}>
       <InputLabel>{label}</InputLabel>
       <InputText
         onChange={(event) => onChange(event.target.value)}

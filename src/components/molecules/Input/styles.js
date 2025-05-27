@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from 'styles/breakpoints';
 
 export const InputContainer = styled.div`
   display: flex;
@@ -15,7 +16,15 @@ export const InputContainer = styled.div`
   border-color: ${({ theme }) => theme.colors.primary};
   box-sizing: border-box;
 
-  @media (max-width: 430px) {
+  @media (max-width: ${breakpoints.xxl}) {
+    max-width: ${({ $variant }) => ($variant === 'modal' ? '418px' : '456px')};
+  }
+
+  @media (max-width: ${breakpoints.lg}) {
+    max-width: 426px;
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
     max-width: 278px;
   }
 `;

@@ -22,19 +22,28 @@ export const HomeScreen = () => {
     <ScreenContainer>
       <ContentContainer>
         <BagImage />
-        <Title $margin={'16px 0 10px 0'} $lineHeight={26}>
+        <Title
+          $margin={'16px 0 10px 0'}
+          $lineHeight={26}
+          $lineHeightXL={22}
+          $lineHeightLG={22}
+          $lineHeightSM={20}
+        >
           Sua lista de supermercado mais fácil do que nunca
         </Title>
-        <Subtitle $align={'center'}>
+        <Subtitle $align={'center'} $mbLG={18}>
           Ajudamos você a organizar sua <br />
           lista de compras de forma descomplicada.
         </Subtitle>
         <Subtitle
           $mw={450}
+          $mwXL={500}
           $mt={36}
           $align={'left'}
-          $mwMobile={272}
-          $mbMobile={4}
+          $alignXL={'left'}
+          $mbXL={4}
+          $mwSM={272}
+          $mbSM={2}
         >
           Digite abaixo seu usuário para ter acesso a sua lista de compras:
         </Subtitle>

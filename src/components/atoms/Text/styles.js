@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { theme } from 'styles';
+import { breakpoints } from 'styles/breakpoints';
 
 export const Title = styled.h1.attrs((props) => ({
   as: props.as || 'h1',
@@ -13,17 +14,48 @@ export const Title = styled.h1.attrs((props) => ({
   padding: ${({ $padding }) => $padding || 0}px;
   max-width: ${({ $mw }) => $mw || 350}px;
 
-  @media (max-width: 430px) {
-    font-size: ${({ $fontSizeMobile, $fontSize }) =>
-      $fontSizeMobile || $fontSize || 18}px;
-    line-height: ${({ $lineHeightMobile, $lineHeight }) =>
-      $lineHeightMobile || $lineHeight || 20}px;
-    max-width: ${({ $mwMobile, $mw }) => $mwMobile || $mw || 250}px;
-    text-align: ${({ $alignMobile, $align }) =>
-      $alignMobile || $align || 'center'};
-    margin: ${({ $marginMobile, $margin }) => $marginMobile || $margin || 0}px;
-    padding: ${({ $paddingMobile, $padding }) =>
-      $paddingMobile || $padding || 0}px;
+  @media (max-width: ${breakpoints.xxl}) {
+    font-size: ${({ $fontSizeXXL, $fontSize }) =>
+      $fontSizeXXL || $fontSize || 20}px;
+    line-height: ${({ $lineHeightXXL, $lineHeight }) =>
+      $lineHeightXXL || $lineHeight || 28}px;
+    max-width: ${({ $mwXXL, $mw }) => $mwXXL || $mw || 275}px;
+    text-align: ${({ $alignXXL, $align }) => $alignXXL || $align || 'center'};
+    margin: ${({ $marginXXL, $margin }) => $marginXXL || $margin || 0}px;
+    padding: ${({ $paddingXXL, $padding }) => $paddingXXL || $padding || 0}px;
+  }
+
+  @media (max-width: ${breakpoints.xl}) {
+    font-size: ${({ $fontSizeXL, $fontSize }) =>
+      $fontSizeXL || $fontSize || 20}px;
+    line-height: ${({ $lineHeightXL, $lineHeight }) =>
+      $lineHeightXL || $lineHeight || 28}px;
+    max-width: ${({ $mwXL, $mw }) => $mwXL || $mw || 275}px;
+    text-align: ${({ $alignXL, $align }) => $alignXL || $align || 'center'};
+    margin: ${({ $marginXL, $margin }) => $marginXL || $margin || 0}px;
+    padding: ${({ $paddingXL, $padding }) => $paddingXL || $padding || 0}px;
+  }
+
+  @media (max-width: ${breakpoints.lg}) {
+    font-size: ${({ $fontSizeLG, $fontSize }) =>
+      $fontSizeLG || $fontSize || 20}px;
+    line-height: ${({ $lineHeightLG, $lineHeight }) =>
+      $lineHeightLG || $lineHeight || 22}px;
+    max-width: ${({ $mwLG, $mw }) => $mwLG || $mw || 300}px;
+    text-align: ${({ $alignLG, $align }) => $alignLG || $align || 'center'};
+    margin: ${({ $marginLG, $margin }) => $marginLG || $margin || 0}px;
+    padding: ${({ $paddingLG, $padding }) => $paddingLG || $padding || 0}px;
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
+    font-size: ${({ $fontSizeSM, $fontSize }) =>
+      $fontSizeSM || $fontSize || 18}px;
+    line-height: ${({ $lineHeightSM, $lineHeight }) =>
+      $lineHeightSM || $lineHeight || 20}px;
+    max-width: ${({ $mwSM, $mw }) => $mwSM || $mw || 250}px;
+    text-align: ${({ $alignSM, $align }) => $alignSM || $align || 'center'};
+    margin: ${({ $marginSM, $margin }) => $marginSM || $margin || 0}px;
+    padding: ${({ $paddingSM, $padding }) => $paddingSM || $padding || 0}px;
   }
 `;
 
@@ -32,11 +64,26 @@ export const Subtitle = styled.p.attrs((props) => props)`
   margin-top: ${({ $mt }) => $mt || 0}px;
   text-align: ${({ $align }) => $align || 'center'};
 
-  @media (max-width: 430px) {
-    max-width: ${({ $mwMobile, $mw }) => $mwMobile || $mw || 272}px;
-    margin-bottom: ${({ $mbMobile }) => $mbMobile || 32}px;
-    text-align: ${({ $alignMobile, $align }) =>
-      $alignMobile || $align || 'center'};
+  @media (max-width: ${breakpoints.xl}) {
+    max-width: ${({ $mwXL, $mw }) => $mwXL || $mw || 300}px;
+    margin-bottom: ${({ $mbXL }) => $mbXL || 0}px;
+    text-align: ${({ $alignXL, $align }) => $alignXL || $align || 'center'};
+    font-size: ${({ $fontSizeXL, $fontSize }) =>
+      $fontSizeXL || $fontSize || 14}px;
+  }
+
+  @media (max-width: ${breakpoints.lg}) {
+    max-width: ${({ $mwLG, $mw }) => $mwLG || $mw || 272}px;
+    margin-bottom: ${({ $mbLG }) => $mbLG || 0}px;
+    text-align: ${({ $alignLG, $align }) => $alignLG || $align || 'center'};
+    font-size: ${({ $fontSizeLG, $fontSize }) =>
+      $fontSizeLG || $fontSize || 14}px;
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
+    max-width: ${({ $mwSM, $mw }) => $mwSM || $mw || 272}px;
+    margin-bottom: ${({ $mbSM }) => $mbSM || 32}px;
+    text-align: ${({ $alignSM, $align }) => $alignSM || $align || 'center'};
   }
 `;
 
@@ -53,18 +100,16 @@ export const SmallText = styled.span.attrs((props) => props)`
   margin: ${({ $margin }) => $margin || 0}px;
   padding: ${({ $padding }) => $padding || 0}px;
 
-  @media (max-width: 430px) {
-    font-size: ${({ $fontSizeMobile, $fontSize }) =>
-      $fontSizeMobile || $fontSize || 14}px;
+  @media (max-width: ${breakpoints.sm}) {
+    font-size: ${({ $fontSizeSM, $fontSize }) =>
+      $fontSizeSM || $fontSize || 14}px;
 
-    font-weight: ${({ $fontWeightMobile, $fontWeight }) =>
-      $fontWeightMobile || $fontWeight || 500};
+    font-weight: ${({ $fontWeightSM, $fontWeight }) =>
+      $fontWeightSM || $fontWeight || 500};
 
-    text-align: ${({ $alignMobile, $align }) =>
-      $alignMobile || $align || 'center'};
+    text-align: ${({ $alignSM, $align }) => $alignSM || $align || 'center'};
 
-    margin: ${({ $marginMobile, $margin }) => $marginMobile || $margin || 0}px;
-    padding: ${({ $paddingMobile, $padding }) =>
-      $paddingMobile || $padding || 0}px;
+    margin: ${({ $marginSM, $margin }) => $marginSM || $margin || 0}px;
+    padding: ${({ $paddingSM, $padding }) => $paddingSM || $padding || 0}px;
   }
 `;

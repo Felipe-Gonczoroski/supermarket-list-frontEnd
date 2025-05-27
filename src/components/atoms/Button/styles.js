@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from 'styles/breakpoints';
 
 const sizeMap = {
   larger: { width: '452px', height: '48px' },
@@ -50,40 +51,6 @@ const colorMap = {
   },
 };
 
-const getResponsiveMaxWidth = (variant, isMobile, isTablet) => {
-  if (isMobile) {
-    if (['larger', 'lightLarger', 'large'].includes(variant)) return '348px';
-    if (variant === 'small') return '44px';
-    return '200px';
-  }
-
-  if (isTablet) {
-    if (['larger', 'lightLarger'].includes(variant)) return '452px';
-    if (variant === 'small') return '160px';
-    if (variant === 'large') return '452px';
-    return '300px';
-  }
-
-  return sizeMap[variant]?.width || '300px';
-};
-
-const getResponsiveHeight = (variant, isMobile, isTablet) => {
-  if (isMobile) {
-    if (['larger', 'lightLarger'].includes(variant)) return '48px';
-    if (['large', 'small'].includes(variant)) return '42px';
-    return '42px';
-  }
-
-  if (isTablet) {
-    if (['larger', 'lightLarger'].includes(variant)) return '48px';
-    if (variant === 'small') return '42px';
-    if (variant === 'large') return '42px';
-    return '42px';
-  }
-
-  return sizeMap[variant]?.height || '42px';
-};
-
 const StyledButton = styled.button.withConfig({
   shouldForwardProp: (prop) => prop !== 'variant',
 })`
@@ -132,14 +99,46 @@ const StyledButton = styled.button.withConfig({
     margin-top: 2px;
   }
 
-  @media (max-width: 830px) {
-    max-width: ${(props) => getResponsiveMaxWidth(props.variant, false, true)};
-    height: ${(props) => getResponsiveHeight(props.variant, false, true)};
+  @media (max-width: ${breakpoints.xxl}) {
+    width: ${(props) =>
+      ['larger', 'lightLarger', 'large'].includes(props.variant)
+        ? '455px'
+        : props.variant === 'small'
+          ? '110px'
+          : '250px'};
+    height: ${(props) => (props.variant === 'small' ? '34px' : '42px')};
   }
 
-  @media (max-width: 430px) {
-    max-width: ${(props) => getResponsiveMaxWidth(props.variant, true, false)};
-    height: ${(props) => getResponsiveHeight(props.variant, true, false)};
+  @media (max-width: ${breakpoints.lg}) {
+    width: ${(props) =>
+      ['larger', 'lightLarger', 'large'].includes(props.variant)
+        ? '430px'
+        : props.variant === 'small'
+          ? '120px'
+          : '200px'};
+  }
+
+  @media (max-width: ${breakpoints.md}) {
+    width: ${(props) =>
+      ['larger', 'lightLarger', 'large'].includes(props.variant)
+        ? '430px'
+        : props.variant === 'small'
+          ? '120px'
+          : '200px'};
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
+    width: ${(props) =>
+      ['larger', 'lightLarger', 'large'].includes(props.variant)
+        ? '260px'
+        : props.variant === 'small'
+          ? '50px'
+          : '180px'};
+
+    height: ${(props) =>
+      props.variant === 'larger' || props.variant === 'lightLarger'
+        ? '48px'
+        : '42px'};
   }
 `;
 

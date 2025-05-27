@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from 'styles/breakpoints';
 
 export const CardContainer = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ export const CardContainer = styled.div`
   box-sizing: border-box;
   background-color: ${({ checked }) => (checked ? '#edf5ec' : 'white')};
 
-  @media (max-width: 430px) {
+  @media (max-width: ${breakpoints.sm}) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -53,10 +54,10 @@ export const Checkbox = styled.div`
     opacity: 1;
   }
 
-  @media (max-width: 430px) {
+  @media (max-width: ${breakpoints.sm}) {
     width: 12px;
     height: 12px;
-    margin: 0px 28px 14px 6px;
+    margin: 0px 32px 14px 3px;
   }
 `;
 
@@ -102,7 +103,7 @@ export const ArrowIcon = styled.img`
   object-fit: contain;
   cursor: pointer;
 
-  @media (max-width: 430px) {
+  @media (max-width: ${breakpoints.sm}) {
     width: 10px;
     height: 22px;
     object-fit: contain;

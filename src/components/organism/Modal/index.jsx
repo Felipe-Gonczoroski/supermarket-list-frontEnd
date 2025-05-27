@@ -75,7 +75,7 @@ export const Modal = ({ onClose, item }) => {
     <ModalBackgroundContainer>
       <ModalContent>
         <ModalHeader>
-          <Title as="h2" $fontWeight={500}>
+          <Title as="h2" $fontWeight={500} $fontSizeSM={26} $fontSizeXXL={24}>
             {item ? 'Editar item' : 'Adicionar novo item'}
           </Title>
           <ModalCloseButton onClick={onClose} />
@@ -85,6 +85,7 @@ export const Modal = ({ onClose, item }) => {
           value={name}
           label={'Nome'}
           placeholder={'Ex: Arroz'}
+          $variant={'modal'}
           $margin={'32px 0 24px 0'}
         />
         <Input
@@ -92,12 +93,10 @@ export const Modal = ({ onClose, item }) => {
           value={quantity}
           label={'Quantidade'}
           type="number"
+          $variant={'modal'}
         />
         <ButtonsContainer mode={mode}>
-          <Button
-            onClick={item ? callUpdateItem : callAddItem}
-            variant="larger"
-          >
+          <Button onClick={item ? callUpdateItem : callAddItem} variant="large">
             {item ? 'Atualizar' : 'Adicionar'}
           </Button>
           {item && (
